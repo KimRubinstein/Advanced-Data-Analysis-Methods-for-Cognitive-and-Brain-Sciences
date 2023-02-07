@@ -195,6 +195,24 @@ list2=["apple","mango","banana"]
 print(list1+list2) # list concatenation
 
 # %%
+# append() method adds a single item at the end of the list without modifying the original list.
+list1=["apple","banana","grapes"]
+print(list1)
+
+# %%
+list1.append("strawberry")   # strawberry is added to the list
+print(list1)
+
+# %%
+# pop() method removes the item at the given index from the list and returns it.
+list1.pop()  # removes the last element from the list
+print(list1)
+
+# %%
+list1.pop()
+print(list1)
+
+# %%
 # Dictionary:
 # an unordered collection of data that stores data in key-value pairs
 dict1={"key1":"value1","key2":"value2"}
@@ -254,7 +272,13 @@ print(tuple1)
 print(tuple1[0])  # accessing values using indexing
 
 # %%
-tuple1[1]="change"  # a value cannot be changed as they are immutable
+tuple1[1]="change"  # a value cannot be changed as tuples are immutable
+
+# %%
+tuple1.pop()   # a value cannot be removed as tuples cannot be modified
+
+# %%
+tuple1.append() # an item cannot be added as tuples cannot be modified
 
 # %%
 # dictionaries are also mutable
@@ -266,6 +290,25 @@ dict1.values() # all the values are printed
 dict1["key1"]="replace_one"  # value assigned to key1 is replaced
 print(dict1)
 print(dict1["key2"])
+
+
+# %%
+dict1={"fruit1":"apple","fruit2":"banana","veg1":"tomato"}
+print(dict1)
+
+# %%
+dict1.update({"veg2":"brinjal"})
+print(dict1)
+
+
+# %%
+dict1.update({"veg3":"chilli"})  # updates the dictionary at the end
+print(dict1)
+
+
+# %%
+dict1.pop("veg2") # what will happen now?
+print(dict1)
 
 # %%
 # let's have another example
