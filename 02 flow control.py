@@ -55,6 +55,9 @@ if a > 1:
 # %%
 # "for" loop
 
+# we will use "for" loop when we need to go through a parameter which is iterable so the loop 
+# will iterate over the parts by a pre-defined order.
+
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
     print (students)
@@ -113,6 +116,9 @@ else:               # the "else" keyword in a for loop specifies a block of code
 # "while" loops
 # while loop execute a set of statements as long as a condition is true
 # (origin :https://www.w3schools.com/python/python_while_loops.asp)
+
+# we will use "while" loop when we want to run an unknown number of times 
+ 
 
 i = 1
 while i < 6:

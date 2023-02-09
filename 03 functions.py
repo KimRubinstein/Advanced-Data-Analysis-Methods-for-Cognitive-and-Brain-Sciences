@@ -2,6 +2,20 @@
 # A function is a block of code that can be executed multiple times with different inputs. 
 # By using functions, you can break down a complex problem into smaller, more manageable parts.
 
+# We will use self-made functions in cases when we will want to use the same calculation multiple times,
+# when only the parameters will change. We will only need to write the function once, and then we will be 
+# able to use the functions many times as we wish.
+
+# Few rules to follow when writing a function:
+# (1) Every function will be responsible for only (and only) calculation,
+#     if there is more than one calculation needed to be done - seperate then into
+#     few functions and add an aditional function that will manage them all.
+# (2) The shorther the better! ~10 lines should be enough to keep the first rule
+# (3) Try to have no more than 4 arguments
+# (4) Avoid duplication
+# (5) Use descriptive names 
+
+
 # %%
 def greet(name):
     print("Hello, " + name + "!")
