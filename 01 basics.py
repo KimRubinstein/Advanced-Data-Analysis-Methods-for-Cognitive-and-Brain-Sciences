@@ -172,7 +172,7 @@ a + (b / 2)
 
 # %%
 # List:
-# a collection of ordered data
+# a collection of ordered and changeable data
 
 list1=[1,4,"Be'er-Sheva",6,"five"]
 list2=[]  # creates an empty list
@@ -212,20 +212,12 @@ print(list1)
 list1.pop()
 print(list1)
 
-# %%
-# Dictionary:
-# an unordered collection of data that stores data in key-value pairs
-dict1={"key1":"value1","key2":"value2"}
-dict2={}   # empty dictionary
-dict3=dict({1:"apple",2:"cherry",3:"strawberry"})
-print(dict1)
-print(dict2)
-print(dict3)
+
 
 
 # %%
 # Tuple:
-# an ordered collection of data
+# an ordered and unchangeable collection of data (a constant list)
 tuple1=(1,2,"college",9)
 tuple2=() # creates an empty tuple
 tuple3=tuple((1,3,5,9,"hello"))
@@ -240,6 +232,16 @@ print(tuple1+tuple2)  # tuples can be concatenated
 # %%
 tuple3=(1,2,3)
 print(type(tuple3))
+
+# %%
+# Dictionary:
+# an unordered, changeable and indexed collection of data that stores data in key-value pairs
+dict1={"key1":"value1","key2":"value2"}
+dict2={}   # empty dictionary
+dict3=dict({1:"apple",2:"cherry",3:"strawberry"})
+print(dict1)
+print(dict2)
+print(dict3)
 
 # %%
 # mutable vs. immutable variables
