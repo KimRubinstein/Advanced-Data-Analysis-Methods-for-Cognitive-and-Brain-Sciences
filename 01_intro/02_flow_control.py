@@ -19,11 +19,12 @@ else:
     print("a and b are equal")
 
 # %%
-# short hand "if"
+# shorthand "if"
 print("b is greater than a") if b > a else print("a is greater than b") if a > b else print ("a and b are equal")
 
 # %%
 # using "or"
+c=10
 if a > b or a > c:
     print("at least one statement is true")
 
@@ -55,12 +56,12 @@ if a > 1:
 # %%
 # "for" loop
 
-# we will use "for" loop when we need to go through a parameter which is iterable so the loop 
-# will iterate over the parts by a pre-defined order.
+# we will use "for" loop when we need to go through a collection which is iterable so the loop
+# will iterate over its elements until it reaches the end of the collection
 
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
-    print (students)
+    print (student)
 
 # %%
 students = ["Avi","Dana","Mor","Na'ama"]
@@ -117,8 +118,7 @@ else:               # the "else" keyword in a for loop specifies a block of code
 # while loop execute a set of statements as long as a condition is true
 # (origin :https://www.w3schools.com/python/python_while_loops.asp)
 
-# we will use "while" loop when we want to run an unknown number of times 
- 
+# we will use "while" loop when we want to run a code block an unknown number of times
 
 i = 1
 while i < 6:
@@ -148,3 +148,7 @@ while i < 6:
   i += 1
 else:       # using "else" we can run a block of code once when the condition no longer is true
   print("i is no longer less than 6")
+
+# a less trivial example
+# %%
+
