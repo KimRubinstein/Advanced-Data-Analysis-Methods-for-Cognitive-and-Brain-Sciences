@@ -19,11 +19,12 @@ else:
     print("a and b are equal")
 
 # %%
-# short hand "if"
+# shorthand "if"
 print("b is greater than a") if b > a else print("a is greater than b") if a > b else print ("a and b are equal")
 
 # %%
 # using "or"
+c=10
 if a > b or a > c:
     print("at least one statement is true")
 
@@ -55,12 +56,12 @@ if a > 1:
 # %%
 # "for" loop
 
-# we will use "for" loop when we need to go through a parameter which is iterable so the loop 
-# will iterate over the parts by a pre-defined order.
+# we will use "for" loop when we need to go through a collection which is iterable so the loop 
+# will iterate over its elements until it reaches the end of the collection.
 
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
-    print (students)
+    print (student)
 
 # %%
 students = ["Avi","Dana","Mor","Na'ama"]
@@ -111,14 +112,26 @@ for num in range(6):
 else:               # the "else" keyword in a for loop specifies a block of code to be executed when the loop is finished
   print("finished!")
 
+# %%
+# list comprehension
+
+numbers = [1, 2, 3, 4, 5] #
+squares = [num ** 2 for num in numbers]
+print(squares)
+
+# In this example, we create a list numbers containing 5 integers. 
+# We then use a list comprehension to create a new list squares which contains the square of each number in the numbers list. 
+# We iterate over each element in the numbers list using the for loop, and raise it to the power of 2 using the ** operator. 
+# The resulting list of squared numbers is assigned to the variable squares, and printed to the console.
+   
+
 
 # %%
 # "while" loops
 # while loop execute a set of statements as long as a condition is true
 # (origin :https://www.w3schools.com/python/python_while_loops.asp)
 
-# we will use "while" loop when we want to run an unknown number of times 
- 
+# we will use "while" loop when we want to run a code block an unknown number of times 
 
 i = 1
 while i < 6:

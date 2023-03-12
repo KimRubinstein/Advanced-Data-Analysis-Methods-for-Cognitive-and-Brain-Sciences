@@ -153,7 +153,7 @@ a = int(a)
 # (-)   subtraction  
 # (*)   multiplication  
 # (/)   division  
-# (^)   power  
+# (**)   power  
 # (%%)  modulo. The remainder after division. E.g., 5 %% 2  gives  1  
 # (%/%) integer division. E.g., 7 %/% 3  gives  2
 
