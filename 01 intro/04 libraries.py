@@ -41,7 +41,6 @@
 # perform specific operations, frameworks contain the basic flow and architecture of the application.
 
 
-# 
 # %%
 # There are two type of modules, built-in modules and external modules.
 # The main difference between them is that built-in modules are part of the Python standard library and are 
@@ -122,10 +121,6 @@ print(sin(b))
 import numpy as np
 
 # %%
-# check numpy version
-# print(np.__version__)
-
-# %%
 # A vector is a single one-dimension array of lists and behaves same as a Python list.
 # Numpy provides numpy.array() method which creates a one dimensional array (vector) which can be horizontal or vertical.
 
@@ -202,7 +197,6 @@ print(arr[4:])      # slice elements from index 4 to the end of the array
 print(arr[-3:-1])   # slice from the index 3 from the end to index 1 from the end
 
 # %%
-# srandomwitch to nonzero (https://numpy.org/doc/stable/reference/generated/numpy.where.html)
 # You can search an array for a certain value, and return the indexes that get a match. To search an array, use the where() method.
 arr = np.array([1, 2, 3, 4, 5, 4, 4])
 x = np.where(arr == 4)
@@ -293,7 +287,10 @@ print(newarr5)
 
 # Pandas examples presented below are based on w3schools Pandas Tutorial: https://www.w3schools.com/python/pandas/default.asp
 
-# pip install pandas
+# %%
+# "conda activate labs2023"
+# "conda install pandas"
+
 import pandas as pd
 
 # %%
@@ -317,8 +314,6 @@ print(df.loc[0])
 print(df.loc[[0, 1]])
 
 # %%
-import pandas as pd
-
 data = {
     "Name": ["John", "Jane", "Jim", "Joan"],
     "Age": [32, 28, 41, 35],
@@ -333,34 +328,53 @@ print(df)
 # refer to the named index:
 print(df.loc["sub2"])
 
-# %%
-import pandas as pd
 
+# %%
 # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.groupby.html add groupby
 
+df1 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],
+                   'Max Speed': [380., 370., 24., 26.]})
+df1
+
+# %%
+df1.groupby(['Animal']).mean()
+
+# %%
+df1.groupby(['Animal']).sum()
+
+# %%
+df1.groupby(by=['Animal']).count()
+
+# %%
+df1.groupby('Animal')['Max Speed'].agg(['sum','count'])
+
+# note that in all the outputs above we did not create a new data frame!
+
+# %%
 # data was taken from:
 # https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-09-14/readme.md
 
-df = pd.read_csv('audio_features.csv')
+audio_df = pd.read_csv('audio_features.csv')
 
 # you can also write the whole path to a certain csv file as below (notice to add an "r" before!)
 # df = pd.read_csv(r"C:\data_folder\data.csv")
 
-print(df) 
+print(audio_df) 
 
 # %%
-print(df.head(10)) # print only the first 10 rows (default of .head() is 5)
-print(df.tail(7))  # print only the last 7 rows (default of .tail() is 5)
+print(audio_df.head(10)) # print only the first 10 rows (default of .head() is 5)
+print(audio_df.tail(7))  # print only the last 7 rows (default of .tail() is 5)
 
 # %%
-print(df.info()) 
+print(audio_df.info()) 
 
 # we can see that there are 41,111 rows and 16 columns
 # the "info" method show us the name of each column, with the data type
 # the method also tells us how many Non-Null values are present in each column
 
+
 # %%
-new_df = df.dropna() # creating new df with no empty cells (remove all rows that contain empty cells)
+new_df = audio_df.dropna() # creating new df with no empty cells (remove all rows that contain empty cells)
                      # note that by default, the dropna() method returns a new DataFrame, and will not change the original
                      # if you do want to change the original DataFrame, use the inplace = True argument
 
@@ -369,51 +383,46 @@ new_df = df.dropna() # creating new df with no empty cells (remove all rows that
 # Another way of dealing with empty cells is to insert a new value instead.
 # This way you do not have to delete entire rows just because of some empty cells.
 # The fillna() method allows us to replace empty cells with a value
-import pandas as pd
 
-df = pd.read_csv('audio_features.csv') 
-df.fillna(130, inplace = True) # replace NULL values with the number 130
+audio_df.fillna(130, inplace = True) # replace NULL values with the number 130
 
 
 # %%
 # A common way to replace empty cells, is to calculate the mean, median or mode value of the column.
 # Pandas uses the mean() median() and mode() methods to calculate the respective values for a specified column
 
-import pandas as pd
-
-df = pd.read_csv('audio_features.csv')
-x = df["speechiness"].mean()
-df["speechiness"].fillna(x, inplace = True)
+x = audio_df["speechiness"].mean()
+audio_df["speechiness"].fillna(x, inplace = True)
 
 # In general, it is not a good idea to replace empty cells with a fixed value. We should either
 # remove the entire row, or find mark the missing values as NaN and make sure the operations we perform on the data treat NaN values correctly.
 # %%
-df.loudness.head()      # selecting an individual column
+audio_df.loudness.head()      # selecting an individual column
 # df['loudness'].head() 
 
 # %%
-df[['loudness']].head() # will return a dataframe containing only this column
-# df['marital'].to_frame().head()
+audio_df[['loudness']].head() # will return a dataframe containing only this column
+# audio_df['loudness'].to_frame().head()
 
 # %%
-df[['mode','energy']].tail() # selecting multiple specific columns
+audio_df[['mode','energy']].tail() # selecting multiple specific columns
 
 # %%
 # selecting rows where a value matches a value
-df_hits_only = df[df['target']==1]
+df_hits_only = audio_df[audio_df['target']==1]
 df_hits_only.head()
 
 # %%
 # we can also select rows where values are less than a value
-df_low_danceavility = df[df['danceability'] < 0.7]
+df_low_danceavility = audio_df[audio_df['danceability'] < 0.7]
 df_low_danceavility.head()
 
 # %%
-df_danceability_6_7 = df[ (df['balance'] >= 0.6) & (df['balance'] <= 0.7) ]
+df_danceability_6_7 = audio_df[ (audio_df['balance'] >= 0.6) and (audio_df['balance'] <= 0.7) ]
 df_danceability_6_7.head()
 
 # %%
-df.iloc[5:10] # returns rows 5 to 9 based on their index values
+audio_df.iloc[5:10] # returns rows 5 to 9 based on their index values
 
 # %%
 # Matplotlib
@@ -424,16 +433,14 @@ df.iloc[5:10] # returns rows 5 to 9 based on their index values
 
 # (source: https://www.geeksforgeeks.org/libraries-in-python/)
 
-# pip install matplotlib
+# "conda activate labs2023"
+# "conda install matplotlib"
 import matplotlib.pyplot as plt
 
 # matplotlib cheat sheets and handouts: https://matplotlib.org/cheatsheets/
 
 # Matplotlib examples presented below are based on w3schools Matplotlib Tutorial: https://www.w3schools.com/python/matplotlib_intro.asp
 
-
-# %%
-import matplotlib.pyplot as plt
 
 xpoints = np.array([0, 6])
 ypoints = np.array([0, 250])
@@ -520,15 +527,14 @@ plt.show()
 # Seaborn is a library for data visualization in Python. It is built on top of Matplotlib and provides a high-level interface 
 # for creating attractive and informative statistical graphics.
 
-#pip install seaborn
+# "conda activate labs2023"
+# "conda install seaborn"
 import seaborn as sns
 
 
 # %%
 # Plotting a Distplot
 
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 sns.distplot([0, 1, 2, 3, 4, 5])
 plt.show()
@@ -537,5 +543,15 @@ plt.show()
 sns.distplot([0, 1, 2, 3, 4, 5], hist=False) # without histogram
 plt.show()
 
-# add more examples from: https://seaborn.pydata.org/examples/index.html
+
+
+# %%
+sns.regplot(x='loudness', y='danceability', data=audio_df) # create a scatter plot with regression line
+plt.show()
+
+# %%
+sns.boxplot(x='performer', y='loudness', data=audio_df, order=['Andy Williams','Britney Spears'])
+plt.show()
+
+# more examples here: https://seaborn.pydata.org/examples/index.html
 # https://seaborn.pydata.org/examples/grouped_barplot.html
