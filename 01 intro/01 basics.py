@@ -118,10 +118,10 @@ a = a == 7
 a != 7
 
 # %%
-a < 10 & b > 8
+a < 10 and b > 8
 
 # %%
-a < 10 | b > 8
+a < 10 or b > 8
 
 # %%
 # "isinstance" function:
