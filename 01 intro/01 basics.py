@@ -6,7 +6,7 @@
 # Anything after a "#" symbol is ignored by Python, so we can (and should!) use it to write comments
 
 # %%
-3 + 4 # execute a line with Ctrl + Enter
+3 + 4 # execute a line with Ctrl + Enter (or the "Run Cell" button)
 # Results of any command will appear in the "Cell Output" below
 
 # %%
@@ -118,10 +118,10 @@ a = a == 7
 a != 7
 
 # %%
-a < 10 and b > 8
+a < 10 and b > 8 # notice that 'and' and '&' are not the same!
 
 # %%
-a < 10 or b > 8
+a < 10 or b > 8 # notice that 'or' and '|' are not the same!
 
 # %%
 # "isinstance" function:
@@ -137,6 +137,9 @@ type(a)
 
 # %%
 type(a) == type(b)
+
+# %%
+a = 7
 
 # %%
 # change the type of object
@@ -177,9 +180,9 @@ a + (b / 2)
 list1=[1,4,"Be'er-Sheva",6,"five"]
 list2=[]  # creates an empty list
 list3=list((1,2,3))
-print(list1)
-print(list2)
-print(list3)
+print(list1,
+      list2,
+      list3)
 
 # %%
 print(list1[4])
@@ -211,9 +214,6 @@ print(list1)
 # %%
 list1.pop()
 print(list1)
-
-
-
 
 # %%
 # Tuple:
@@ -293,7 +293,6 @@ dict1["key1"]="replace_one"  # value assigned to key1 is replaced
 print(dict1)
 print(dict1["key2"])
 
-
 # %%
 dict1={"fruit1":"apple","fruit2":"banana","veg1":"tomato"}
 print(dict1)
@@ -302,11 +301,9 @@ print(dict1)
 dict1.update({"veg2":"brinjal"})
 print(dict1)
 
-
 # %%
 dict1.update({"veg3":"chilli"})  # updates the dictionary at the end
 print(dict1)
-
 
 # %%
 dict1.pop("veg2") # what will happen now?

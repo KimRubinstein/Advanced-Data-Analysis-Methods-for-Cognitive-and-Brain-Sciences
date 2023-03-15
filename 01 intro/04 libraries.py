@@ -40,7 +40,6 @@
 # development process. However, frameworks are usually more complex than libraries. Also, while libraries contain packages that 
 # perform specific operations, frameworks contain the basic flow and architecture of the application.
 
-
 # %%
 # There are two type of modules, built-in modules and external modules.
 # The main difference between them is that built-in modules are part of the Python standard library and are 
@@ -100,17 +99,17 @@ print(sin(b))
 
 # You can also list all available environments using the "conda info --envs" command.
 
-# after actiavting the relevant environment, we should install our packages/libraries.
+# after actiavting the relevant environment, we should install our packages/libraries using "conda install *package_name*".
 
 # You can update packages in an environment using the "conda update" command. 
 
 # For example, if you want to update the package "numpy" to the latest version in your "labs2023" environment, 
 # you can run the command conda activate labs2023 && conda update numpy. 
-# This will activate the "labs2023" environment, update the "numpy" package, and deactivate the environment. 
+# This will activate the "labs2023" environment and update the "numpy" package. 
 # You can also specify a specific version of a package to update to by running the command "conda update package_name=version_number".
 
-# After creating your environment, you can install the packages/libraries you need to run your code.
-# You should make sure that you chose the right Interpreter
+# After creating your environment, and installing the packages/libraries you need to run your code,
+# you should make sure that you chose the right Interpreter
 # (Select + Shift + P) > Python: Select Intertperter
 
 # NumPy examples presented below are based on w3schools NumPy Tutorial: https://www.w3schools.com/python/numpy/default.asp
