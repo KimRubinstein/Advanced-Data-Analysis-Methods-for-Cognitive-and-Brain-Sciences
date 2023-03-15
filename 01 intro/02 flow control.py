@@ -1,5 +1,3 @@
-
-
 # If, if else
 
 # %%
@@ -124,8 +122,6 @@ print(squares)
 # We iterate over each element in the numbers list using the for loop, and raise it to the power of 2 using the ** operator. 
 # The resulting list of squared numbers is assigned to the variable squares, and printed to the console.
    
-
-
 # %%
 # "while" loops
 # while loop execute a set of statements as long as a condition is true
