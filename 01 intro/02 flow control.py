@@ -66,20 +66,30 @@ students = ["Avi","Dana","Mor","Na'ama"]
 for i_student, student in enumerate(students):
     print(i_student, student)
 
+# what does "enumerate" do?
+
 # %%
+# "Continue":
+# with the continue statement we can stop the current iteration of the loop, and continue with the next
+
+# what will be printed here?
+
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
     if student == "Dana":
-        continue # with the continue statement we can stop the current iteration of the loop, and continue with the next:
+        continue 
     print (student)
 
 # %%
+# "Break":
+# with the break statement we can stop the loop before it has looped through all the items
+
+# what will be printed here?
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
     print (student)
     if student == "Mor":
-        break # with the break statement we can stop the loop before it has looped through all the items
-
+        break 
 # %%
 students = ["Avi","Dana","Mor","Na'ama"]
 for student in students:
@@ -157,3 +167,4 @@ while i < 6:
   i += 1
 else:       # using "else" we can run a block of code once when the condition no longer is true
   print("i is no longer less than 6")
+# %%
