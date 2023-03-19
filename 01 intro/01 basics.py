@@ -14,6 +14,8 @@
 # (it will now appear under "VARIABLES" section)
 a = 3
 
+# When we say "VARIABLES", what do we exactly mean?!
+
 # %%
 # Running code with only the name of an object results in "printing" its contents:
 a
@@ -51,7 +53,6 @@ c = B - A # Your first ERROR. Why?
 # %%
 c = a + b # assign without print
 c          # then print
-
 
  # %%
 # The variables we created above were all type "int".
@@ -98,9 +99,6 @@ a = 3.1
 d = c - a
 
 # %%
-# another example is needed here
-
-# %%
 # Logical:
 # TRUE/FALSE object
 a > b
@@ -112,10 +110,14 @@ a = 7
 a == 7
 
 # %%
+# What will the variable "a" contain?
 a = a == 7
 
 # %%
 a != 7
+
+# %%
+a != 1 # Why did we get "False"?
 
 # %%
 a < 10 and b > 8 # notice that 'and' and '&' are not the same!
@@ -126,28 +128,25 @@ a < 10 or b > 8 # notice that 'or' and '|' are not the same!
 # %%
 # "isinstance" function:
 # returns "True" if the specified object is of the specified type, otherwise "False"
-isinstance(a, int)
+isinstance(b, int)
 
 # %%
 # check if a is one of the types described in the type parameter
-isinstance("a", (float, int, str, list, dict, tuple))
+isinstance("b", (float, int, str, list, dict, tuple))
 
 # %%
-type(a)
+type(b)
 
 # %%
 type(a) == type(b)
 
 # %%
-a = 7
-
-# %%
 # change the type of object
-a = str(a)
+b = str(b)
 
 # %%
 # back to int
-a = int(a)
+b = int(b)
 
 # %%
 # Operators:
@@ -161,30 +160,35 @@ a = int(a)
 # (%/%) integer division. E.g., 7 %/% 3  gives  2
 
 # %%
-a + b / 2
+b + c / 2
 
 # %%
-a + (b / 2)
+b + (c / 2)
 
 # %%
-(a + b) / 2
+(b + c) / 2
 
 
 # %%
 # (lists, tuples and dictionaries code chuncks origin: https://www.educative.io/answers/list-vs-tuple-vs-set-vs-dictionary-in-python)
 
 # %%
-# List:
+# List []:
 # a collection of ordered and changeable data
 
 list1=[1,4,"Be'er-Sheva",6,"five"]
-list2=[]  # creates an empty list
-list3=list((1,2,3))
-print(list1,
-      list2,
-      list3)
+print(list1)
 
 # %%
+list2=[]  # creates an empty list
+print(list2)
+
+# %%
+list3=list((1,2,3))
+print(list3)
+
+# %%
+# what will be the output here?
 print(list1[4])
 
 # %%
@@ -198,49 +202,49 @@ list2=["apple","mango","banana"]
 print(list1+list2) # list concatenation
 
 # %%
-# append() method adds a single item at the end of the list without modifying the original list.
-list1=["apple","banana","grapes"]
-print(list1)
+print(list2)
 
 # %%
-list1.append("strawberry")   # strawberry is added to the list
-print(list1)
+# append() method adds a single item at the end of the list without modifying the original list.
+list2.append("strawberry")   # strawberry is added to the list
+print(list2)
 
 # %%
 # pop() method removes the item at the given index from the list and returns it.
-list1.pop()  # removes the last element from the list
-print(list1)
+list2.pop()  # removes the last element from the list
+print(list2)
 
 # %%
-list1.pop()
-print(list1)
-
-# %%
-# Tuple:
+# Tuple ():
 # an ordered and unchangeable collection of data (a constant list)
 tuple1=(1,2,"college",9)
-tuple2=() # creates an empty tuple
-tuple3=tuple((1,3,5,9,"hello"))
 print(tuple1)
+
+# %%
+tuple2=() # creates an empty tuple
 print(tuple2)
+
+# %%
+tuple3=tuple((1,3,5,9,"hello"))
 print(tuple3)
 
 # %%
-tuple2=("orange","grapes")
-print(tuple1+tuple2)  # tuples can be concatenated
+# tuples can be concatenated
+tuple4 = (tuple1+tuple3)  
+print(type(tuple4))
 
 # %%
-tuple3=(1,2,3)
-print(type(tuple3))
-
-# %%
-# Dictionary:
+# Dictionary {}:
 # an unordered, changeable and indexed collection of data that stores data in key-value pairs
 dict1={"key1":"value1","key2":"value2"}
-dict2={}   # empty dictionary
-dict3=dict({1:"apple",2:"cherry",3:"strawberry"})
 print(dict1)
+
+# %%
+dict2={}   # empty dictionary
 print(dict2)
+
+# %%
+dict3=dict({1:"apple",2:"cherry",3:"strawberry"})
 print(dict3)
 
 # %%
@@ -252,7 +256,8 @@ print(dict3)
 
 # Moreover, if we try to change the value of an immutable variable then the old variable destroys 
 # and a new variable is created with the same name and new value. 
-# Hence, mutable variables can change their state or content. Whereas immutable variables cannot change their state or content.
+# Hence, mutable variables can change their state or content. 
+# Whereas immutable variables cannot change their state or content.
 
 # (explanation origin: https://www.toppr.com/guides/computer-science/introduction-to-python/mutable-and-immutable-variables/mutable-and-immutable-variables/)
 
@@ -285,12 +290,19 @@ tuple1.append() # an item cannot be added as tuples cannot be modified
 # %%
 # dictionaries are also mutable
 dict1={"key1":1,"key2":"value2",3:"value3"}
+print(dict1)
+
+# %%
 print(dict1.keys())  # all the keys are printed
+
+# %%
 dict1.values() # all the values are printed
 
 # %%
 dict1["key1"]="replace_one"  # value assigned to key1 is replaced
 print(dict1)
+
+# %%
 print(dict1["key2"])
 
 # %%
@@ -306,24 +318,45 @@ dict1.update({"veg3":"chilli"})  # updates the dictionary at the end
 print(dict1)
 
 # %%
-dict1.pop("veg2") # what will happen now?
+dict1.pop("veg2") # what will happen now? (reminder: "veg2" is a key)
 print(dict1)
 
 # %%
-# let's have another example
+# let's have another example:
+
+# what will this row do?
 a = [5]
 
 # %%
+print(a)
+
+# %%
+# what will "b" contain?
 b = a
 
 # %%
-a[0] =7 #what will happen now?
+print(b)
 
 # %%
+a[0] =7 # what will happen now? 
+print(a)
+
+# %%
+# what will "b" contain now?
 b
+
+# %%
+print(b)
 
 # %%
 a = [2] # what will happen now?
 
+# %%
+print(a)
+
  # %%
+ # what will "b" contain now?
 b
+
+# %%
+print(b)
