@@ -95,4 +95,3 @@ print(result)
 # EXTRA: Python Global Keyword
 # https://www.programiz.com/python-programming/global-keyword
 
-# %%

@@ -75,7 +75,7 @@ print(sin(b))
 
 # To install NumPy (and other external libraries/packages), you can use the pip package manager "pip install numpy" in the Terminal.
 
-# BUTTTTTT, you should not ever do that. why?
+# BUTTTTTT, (usually) you should not do that. why?
 
 # Each version of Python (or external packages/libraries) could react differently to the same code. 
 # Moreover, there might be some functions that won’t be available after updating your Python version. 
@@ -83,6 +83,9 @@ print(sin(b))
 # This means that you create an environment that will be used with a specific version of Python and 
 # a specific version of your packages which you can always come back and use. 
 # This is useful for managing dependencies and ensuring that your code runs on different machines without version conflicts. 
+
+# We *can* use "pip install" only *after* activating the relevant environment,
+# (there are some packages that can be installed *only* by using pip install)
 
 # If conda is not installed, you can download and install it from the Anaconda website
 # https://www.anaconda.com/products/distribution
