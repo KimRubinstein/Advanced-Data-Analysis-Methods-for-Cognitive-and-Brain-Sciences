@@ -1,4 +1,4 @@
-# lessons 01-03 are based on Mattan S. Ben-Shachar 
+# lessons 01-03 are inspired by Mattan S. Ben-Shachar 
 # "Practical Applications in R for Psychologists" 01-intro Github repo
 # https://github.com/mattansb/Practical-Applications-in-R-for-Psychologists
 
