@@ -41,8 +41,19 @@ if a > 1:
         print("but not above 5")
 
 # %%
-# now let's try it again for a = 3
+# now let's try it again for a > 5
 a = 3
+if a > 1:
+    print ("a is bigger than 1,")
+    if a > 5:
+        print("and also above 5")
+    else:
+        print("but not above 5")
+
+
+# %%
+# and now for a < 1 (what will happen now?)
+a = 0
 if a > 1:
     print ("a is bigger than 1,")
     if a > 5:
@@ -67,6 +78,9 @@ for i_student, student in enumerate(students):
     print(i_student, student)
 
 # what does "enumerate" do?
+
+# enumerate is a built-in function in python that allows to keep track of the number of iterations 
+# (loops) in a loop
 
 # %%
 # "Continue":
